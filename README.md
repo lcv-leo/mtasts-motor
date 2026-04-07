@@ -1,1 +1,1 @@
-# mta-sts.server
+# mtasts-motor

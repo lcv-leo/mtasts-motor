@@ -1,7 +1,7 @@
-// Módulo: mtasts-admin/mta-sts-server/src/index.ts
+// Módulo: mtasts-motor/src/index.ts
 // Descrição: Worker que intercepta subdomínios `mta-sts.*` e fornece dinamicamente políticas MTA-STS ativas conectadas via BIGDATA_DB.
 
-const APP_VERSION = 'APP v02.00.00';
+const APP_VERSION = 'APP v02.00.02';
 
 interface Env {
   BIGDATA_DB: D1Database;
