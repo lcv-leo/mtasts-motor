@@ -7,6 +7,13 @@
 
 
 ## 🧠 MEMÓRIA DE CONTEXTO ISOLADO (MTASTS-MOTOR)
+## 2026-04-10 — Biome 2.x + ESM + wrangler local (v02.00.03)
+- Biome 2.x adicionado (lint + format com organizeImports)
+- Module type: commonjs → module (ESM)
+- wrangler adicionado ao devDependencies (antes global)
+- @cloudflare/workers-types atualizado para 4.20260411
+- Dependabot groups: @vitest/* e @biomejs/* adicionados
+
 # AI Memory Log
 
 ## 2026-04-08 — GitHub Actions Purge & Dependabot Standardization
