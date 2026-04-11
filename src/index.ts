@@ -44,7 +44,7 @@ export default {
     } catch (error) {
       // Compliance: tratamento rígido de exceções (no-explicit-any)
       const errMessage = error instanceof Error ? error.message : String(error);
-      console.error(errMessage);
+      console.error(`[mtasts-motor] ${errMessage}`);
       return new Response("Internal Server Error", { status: 500 });
     }
   }
