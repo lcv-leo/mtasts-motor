@@ -1,8 +1,4 @@
-node_modules/
-dist/
-.wrangler/
-
-# Security/local-only artifacts: never commit secrets, local Cloudflare state or generated noise
+# Security/local-only artifacts: never publish secrets, local Cloudflare state or generated noise
 .env
 .env.*
 .dev.vars
