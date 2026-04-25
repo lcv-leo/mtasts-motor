@@ -1,0 +1,4 @@
+# Default code owner for the entire repository.
+# Required-review for any external PR; ensures the operator is notified
+# automatically when third parties open changes.
+* @lcv-leo

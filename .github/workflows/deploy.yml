@@ -48,8 +48,16 @@ jobs:
             echo "::error::D1_DATABASE_ID secret is not set" >&2
             exit 1
           fi
-          sed -i "s/00000000-0000-0000-0000-000000000000/${D1_DATABASE_ID}/g" wrangler.json
-          grep -q "${D1_DATABASE_ID}" wrangler.json || { echo "::error::Substitution failed" >&2; exit 1; }
+          # Deterministic JSON mutation: only `.d1_databases[0].database_id` is touched.
+          # Avoids regex pitfalls of sed (escape, multi-occurrence) per peer review (Gemini, session b8a27611).
+          jq --arg id "$D1_DATABASE_ID" '.d1_databases[0].database_id = $id' wrangler.json > wrangler.json.tmp
+          mv wrangler.json.tmp wrangler.json
+          # Post-mutation verification
+          grep -q "$D1_DATABASE_ID" wrangler.json || { echo "::error::Substitution failed: real ID not in file" >&2; exit 1; }
+          if grep -q "00000000-0000-0000-0000-000000000000" wrangler.json; then
+            echo "::error::Placeholder still present after mutation" >&2
+            exit 1
+          fi
         env:
           D1_DATABASE_ID: ${{ secrets.D1_DATABASE_ID }}
 

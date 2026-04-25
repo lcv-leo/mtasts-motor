@@ -48,20 +48,15 @@ cd mtasts-motor
 npm ci
 ```
 
-### 2. Create your D1 database and apply schema
+### 2. Create your D1 database
 
 ```bash
 npx wrangler d1 create bigdata_db
 # wrangler outputs:
 #   database_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
-
-npx wrangler d1 execute bigdata_db --remote --command "
-  CREATE TABLE IF NOT EXISTS mtasts_mta_sts_policies (
-    domain TEXT PRIMARY KEY,
-    policy_text TEXT NOT NULL
-  );
-"
 ```
+
+Take note of the `database_id` value — you need it for step 3 BEFORE any other `wrangler d1` command can run, because `wrangler d1 execute` resolves the binding via `wrangler.json` and the shipped placeholder will fail the API call.
 
 ### 3. Wire the database_id into wrangler.json
 
@@ -79,7 +74,20 @@ npx wrangler d1 execute bigdata_db --remote --command "
 }
 ```
 
-### 4. Insert at least one policy
+### 4. Apply the schema
+
+Now that `wrangler.json` has the real ID:
+
+```bash
+npx wrangler d1 execute bigdata_db --remote --command "
+  CREATE TABLE IF NOT EXISTS mtasts_mta_sts_policies (
+    domain TEXT PRIMARY KEY,
+    policy_text TEXT NOT NULL
+  );
+"
+```
+
+### 5. Insert at least one policy
 
 ```bash
 npx wrangler d1 execute bigdata_db --remote --command "
@@ -91,13 +99,13 @@ max_age: 86400');
 "
 ```
 
-### 5. Deploy
+### 6. Deploy
 
 ```bash
 npx wrangler deploy
 ```
 
-### 6. Bind a custom domain
+### 7. Bind a custom domain
 
 For each domain whose policy this Worker should serve, configure a Cloudflare custom domain on the Worker for `mta-sts.<that-domain>`. The Worker host header dispatches per-domain automatically.
 
@@ -124,3 +132,13 @@ Copyright (C) 2026 Leonardo Cardozo Vargas.
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details. The full license text is at [LICENSE](./LICENSE).
+
+### AGPL §13 source-offer (operators of public deployments)
+
+If you operate a modified copy of this Worker as a publicly-accessible network service, AGPL-3.0 §13 obligates you to make the corresponding source code available to your remote users. This Worker is non-interactive (machine-to-machine HTTP); it has no UI in which to display Appropriate Legal Notices, so the offer must be machine-readable. Acceptable patterns:
+
+- Add a `Link: <https://your-fork-url>; rel="source"` HTTP header on the Worker's responses.
+- Expose a `GET /source` route returning your fork's repository URL as `text/plain`.
+- Document the source URL in the operator's public landing page if one exists.
+
+If you only deploy this Worker for your own infrastructure (no external users), §13 does not apply because there are no remote users to receive the offer. Internal-only operation falls under AGPL §0's general permission to use without distribution.
