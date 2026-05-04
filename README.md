@@ -139,7 +139,7 @@ For your fork, the alternatives are:
 - **License**: [AGPL-3.0-or-later](./LICENSE). Network-service trigger applies — running a modified fork as a service obligates you to publish the modifications.
 - **Security disclosure**: see [SECURITY.md](./SECURITY.md).
 - **Changelog**: [CHANGELOG.md](./CHANGELOG.md).
-- **Sponsorship**: see the repo's `Sponsor` button or [GitHub Sponsors profile](https://github.com/sponsors/lcv-leo).
+- **Sponsorship**: see the repo's `Sponsor` button or [GitHub Sponsors profile](https://github.com/sponsors/LCV-Ideas-Software).
 - **Action pinning**: all GitHub Actions are pinned by full SHA per supply-chain hardening baseline.
 
 ## License
@@ -159,3 +159,7 @@ If you operate a modified copy of this Worker as a publicly-accessible network s
 - Document the source URL in the operator's public landing page if one exists.
 
 If you only deploy this Worker for your own infrastructure (no external users), §13 does not apply because there are no remote users to receive the offer. Internal-only operation falls under AGPL §0's general permission to use without distribution.
+
+---
+
+<p align="center"><sub>© LCV Ideas &amp; Software<br>LEONARDO CARDOZO VARGAS TECNOLOGIA DA INFORMACAO LTDA<br>Rua Pais Leme, 215 Conj 1713  - Pinheiros<br>São Paulo - SP<br>CEP 05.424-150<br>CNPJ: 66.584.678/0001-77<br>IM 05.424-150</sub></p>
