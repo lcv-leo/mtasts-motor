@@ -19,8 +19,8 @@
     "lint": "biome check src",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",
-    "format:public": "prettier --write \"**/README.md\" \"**/index.html\"",
-    "format:public:check": "prettier --check \"**/README.md\" \"**/index.html\""
+    "format:public": "prettier --write \"**/index.html\"",
+    "format:public:check": "prettier --check \"**/index.html\""
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",
