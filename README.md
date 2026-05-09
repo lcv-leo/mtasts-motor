@@ -12,12 +12,13 @@
 
 A Cloudflare Worker that serves dynamic [MTA-STS](https://datatracker.ietf.org/doc/html/rfc8461) policies from a Cloudflare D1 backing store. Designed to live behind the `mta-sts.<domain>` subdomain convention and respond to `GET /.well-known/mta-sts.txt`.
 
-**Status.** Stable. Current release: **v02.00.10**. See [CHANGELOG.md](./CHANGELOG.md) for the full release history.
+**Status.** Stable. Current release: **v02.00.11**. See [CHANGELOG.md](./CHANGELOG.md) for the full release history.
 
 The version history at a glance:
 
 | Release | Scope |
 |---|---|
+| **`v02.00.11`** | **Site sponsor card iteration.** `site/index.html` GitHub Sponsors iframe (caixa branca cross-origin) substituído por link card dark navy com ❤ pink + meta cyan + seta animada; card movido para DEPOIS dos botões (lcv.dev/sponsor primário, GitHub Sponsors alternativa). Companion ship Phase 3 (12 repos). |
 | **`v02.00.10`** | **Site visual identity refresh.** `site/index.html` (GitHub Pages) reskinneada para a nova identidade dark-first navy/cyan da org LCV (`#050b18`/`#38bdf8`/`#34d399`, gradientes radiais, glow shadows, gradient text no h1). Coordinated Phase 2 companion ship (calculadora, oraculo, astrologo, admin, mainsite, maestro, mtasts). APP_VERSION bumpada em src/index.ts + test fixture em paridade. Sem mudança no app runtime. |
 | **`v02.00.09`** | **README organizational standardization.** Adopted the shared repository README opening pattern, corrected public release and clone links to the organization, surfaced the top-level version-history table, and kept the GitHub Sponsors link on `lcv-leo` by explicit beneficiary decision. |
 | **`v02.00.08`** | **Publication completeness and Pages modernization.** Added `NOTICE`, `THIRDPARTY.md`, and migrated fully to the current GitHub Pages artifact-deployment model. |

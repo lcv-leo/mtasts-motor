@@ -104,6 +104,6 @@ describe('mtasts-motor', () => {
 
     expect(response.status).toBe(500);
     expect(await response.text()).toBe('Internal Server Error');
-    expect(consoleError).toHaveBeenCalledWith('[mtasts-motor] APP v02.00.10 db-failure:example.com');
+    expect(consoleError).toHaveBeenCalledWith('[mtasts-motor] APP v02.00.11 db-failure:example.com');
   });
 });
