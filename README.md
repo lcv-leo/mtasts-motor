@@ -146,24 +146,16 @@ For your fork, the alternatives are:
 - **Sponsorship**: see the repo's `Sponsor` button or [central sponsor page](https://www.lcv.dev/sponsor).
 - **Action pinning**: all GitHub Actions are pinned by full SHA per supply-chain hardening baseline.
 
+## Links
+
+- Site: [https://mtasts-motor.lcv.dev](https://mtasts-motor.lcv.dev)
+- GitHub: [https://github.com/LCV-Ideas-Software/mtasts-motor](https://github.com/LCV-Ideas-Software/mtasts-motor)
+- Sponsors: [https://github.com/sponsors/LCV-Ideas-Software](https://github.com/sponsors/LCV-Ideas-Software)
+
 ## License
 
-Copyright (C) 2026 LCV Ideas & Software
-
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details. The full license text is at [LICENSE](./LICENSE).
-
-### AGPL §13 source-offer (operators of public deployments)
-
-If you operate a modified copy of this Worker as a publicly-accessible network service, AGPL-3.0 §13 obligates you to make the corresponding source code available to your remote users. This Worker is non-interactive (machine-to-machine HTTP); it has no UI in which to display Appropriate Legal Notices, so the offer must be machine-readable. Acceptable patterns:
-
-- Add a `Link: <https://your-fork-url>; rel="source"` HTTP header on the Worker's responses.
-- Expose a `GET /source` route returning your fork's repository URL as `text/plain`.
-- Document the source URL in the operator's public landing page if one exists.
-
-If you only deploy this Worker for your own infrastructure (no external users), §13 does not apply because there are no remote users to receive the offer. Internal-only operation falls under AGPL §0's general permission to use without distribution.
+AGPL-3.0-or-later. See [LICENSE](./LICENSE), [NOTICE](./NOTICE), and [THIRDPARTY](./THIRDPARTY.md).
 
 ---
 
-<p align="center"><span style="font-size: 1.5em;"><strong>© LCV Ideas &amp; Software</strong></span><br><sub>LEONARDO CARDOZO VARGAS TECNOLOGIA DA INFORMACAO LTDA<br>Rua Pais Leme, 215 Conj 1713&nbsp;&nbsp;- Pinheiros<br>São Paulo - SP<br>CEP 05.424-150<br>CNPJ: 66.584.678/0001-77<br>IM 05.424-150</sub></p>
+<p align="center"><span style="font-size: 1.5em;"><strong>© LCV Ideas &amp; Software</strong></span><br><sub>LEONARDO CARDOZO VARGAS TECNOLOGIA DA INFORMACAO LTDA<br>Rua Pais Leme, 215 Conj 1713 - Pinheiros<br>São Paulo - SP<br>CEP 05.424-150<br>CNPJ: 66.584.678/0001-77<br>IM 05.424-150</sub></p>
